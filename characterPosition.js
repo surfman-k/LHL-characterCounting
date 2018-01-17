@@ -1,11 +1,11 @@
-var finalCount = {};
+var positions = {};
 
-function countLetters(str){
+function positionLetters(str){
 	var noSpace = str.split(' ').join('');
 	for (var i = 0; i < noSpace.length; i++){
-		!finalCount[noSpace[i]] ? finalCount[noSpace[i]] = 1 : finalCount[noSpace[i]] += 1;
+		!positions[noSpace[i]] ? positions[noSpace[i]] = [i] : positions[noSpace[i]].push(i);
 	}
-	return finalCount;
+	return positions;
 }
 
-console.log(countLetters('lighthouse in the house'));
+console.log(positionLetters('lighthouse in the house'));
